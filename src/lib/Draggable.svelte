@@ -10,30 +10,8 @@
 	
 	function onMouseMove(e: MouseEvent) {
 		if (moving) {
-
-            if(left <= 499 && left >= 0){
-                left += e.movementX;
-            }
-
-            if(left >= 499) {
-                left--
-            }
-
-            if(left <= 0){
-                left++
-            }
-
-            if(top <= 499 && top >= 0){
-                top += e.movementY;
-            }
-            if(top >= 499) {
-                top--
-            }
-
-            if(top <= 0){
-                top++
-            }
-      
+                left += (e.movementX);
+                top += (e.movementY);
 		}
 	}
 	

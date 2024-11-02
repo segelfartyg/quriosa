@@ -1,32 +1,32 @@
 <script lang="ts">
-    export let onComponentAdd;
-    export let newComponentText: string;
+    import ColorPicker from 'svelte-awesome-color-picker';
+    import PlusImage from '../assets/noteladplus.svg'
+    export let onPostItAdd;
+    export let newPostItText: string;
+    export let colorHex: string;
+
 </script>
 
 <div>
-    <input placeholder="frame" type="number">
-    <input placeholder="component text" type="text" bind:value={newComponentText}>
+    <ColorPicker bind:hex={colorHex} />
+    <input placeholder="component text" type="text" bind:value={newPostItText}>
+    <button onclick={onPostItAdd}><img aria-label="plusButton" alt="plusButton" src={PlusImage}></button>
 
-    <button onclick={onComponentAdd}>ADD COMPONENT</button>
     <button>ADD FRAME</button>
 </div>
 
 <style>
     div {
-        margin:auto;
-        width: 300px;
+        width: 100%;
         height: fit-content;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border:solid black 3px;
-        border-radius: 10px;
-        margin-top:1rem;
         display: flex;
-        flex-direction: column;
-        padding:1rem;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+        height:100px;
+        border-top: 1px solid black;
         align-items: center;
-        gap: 15px;
-        
+        justify-content: center;
     }
 
     input{
